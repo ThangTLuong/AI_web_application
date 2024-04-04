@@ -37,6 +37,11 @@ body {
   padding: 0.6rem 0.5rem 0.5rem 0.5rem;
 }
 
+.user-input:focus, .user-input:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+}
+
 textarea {
   scrollbar-width: thin;
   scrollbar-color: #999 transparent;
