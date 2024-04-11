@@ -28,7 +28,9 @@ export default function Neuro() {
     <div className="page-container">
       <div className="chat-history">
         {chatHistory?.map((message, index) => (
-          <p key={index}>{message}</p>
+          <p key={index} className="message-box">
+            {message}
+          </p>
         ))}
       </div>
       <form className="form" action={onSubmit}>
