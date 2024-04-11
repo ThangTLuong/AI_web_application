@@ -15,6 +15,7 @@ export default function Neuro() {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       appendChatHistory(event.currentTarget.value as string);
+      event.currentTarget.value = "";
     }
   }
 
