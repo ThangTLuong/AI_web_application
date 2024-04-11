@@ -1,0 +1,70 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(90deg, rgba(41, 109, 255, 0.7), rgba(114, 38, 255, 0.7));
+  background-color: #000000;
+}
+
+.page-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat-history, .user-input {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  width: 800px;
+}
+
+.chat-history {
+  height: 53rem;
+  min-height: 100px;
+  margin-top: 25px;
+}
+
+.form {
+  display: flex;
+}
+
+.user-input {
+  height: 50px;
+  min-height: 50px;
+  width: 740px;
+  resize: none;
+  margin-top: 10px;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  font-size: 16px;
+  padding: 0.6rem 0.5rem 0.5rem 0.5rem;
+}
+
+.user-input:focus, .user-input:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+}
+
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: #999 transparent;
+}
+
+@media screen and (max-width: 800px) {
+  .chat-history {
+    width: 520px;
+  }
+
+  .user-input {
+    width: 465px;
+  }
+}
+
+.submit-button {
+  height: 50px;
+  width: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin: 10px 0 10px 10px;
+}
