@@ -15,6 +15,7 @@ export default function Neuro() {
     if (event.key === "Enter" && !event.shiftKey) {
       event.preventDefault();
       appendChatHistory(event.currentTarget.value as string);
+      event.currentTarget.value = "";
     }
   }
 
@@ -28,7 +29,9 @@ export default function Neuro() {
     <div className="page-container">
       <div className="chat-history">
         {chatHistory?.map((message, index) => (
-          <p key={index}>{message}</p>
+          <p key={index} className="message-box">
+            {message}
+          </p>
         ))}
       </div>
       <form className="form" action={onSubmit}>
