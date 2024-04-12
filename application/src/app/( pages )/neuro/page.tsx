@@ -6,9 +6,13 @@ import React, { useState } from "react";
 export default function Neuro() {
   const [chatHistory, setChatHistory] = useState<string[]>([]);
 
-  async function onSubmit(formData: FormData) {
-    let message: string = formData.get("name") as string;
-    appendChatHistory(message);
+  async function onSubmit(event: React.MouseEvent<HTMLDivElement>) {
+    event.preventDefault();
+    const text: HTMLTextAreaElement = document.querySelector(
+      "textarea"
+    ) as HTMLTextAreaElement;
+    appendChatHistory(text.value);
+    text.value = "";
   }
 
   async function onEnter(event: React.KeyboardEvent<HTMLTextAreaElement>) {
@@ -34,16 +38,15 @@ export default function Neuro() {
           </p>
         ))}
       </div>
-      <form className="form" action={onSubmit}>
+      <form className="form">
         <textarea
           name="name"
+          id="user-input"
           className="user-input"
           placeholder="Message"
           onKeyDown={onEnter}
         />
-        <button type="submit">
-          <div className="submit-button"></div>
-        </button>
+        <div className="submit-button" onClick={onSubmit}></div>
       </form>
     </div>
   );
