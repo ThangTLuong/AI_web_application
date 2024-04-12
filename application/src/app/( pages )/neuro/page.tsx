@@ -11,7 +11,7 @@ export default function Neuro() {
     const text: HTMLTextAreaElement = document.querySelector(
       "textarea"
     ) as HTMLTextAreaElement;
-    appendChatHistory(text.value);
+    appendChatHistory(text.value as string);
     text.value = "";
   }
 

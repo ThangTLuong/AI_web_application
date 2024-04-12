@@ -42,6 +42,7 @@ body {
   min-height: 100px;
   margin-top: 25px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .form {
@@ -53,16 +54,18 @@ body {
   min-height: 50px;
   width: 740px;
   resize: none;
+  font-size: 16px;
+  font-weight: bold;
   margin-top: 10px;
   color: rgb(0, 0, 0);
   background-color: transparent;
-  font-size: 16px;
   padding: 0.6rem 0.5rem 0.5rem 0.5rem;
 }
 
 .user-input:focus, .user-input:hover {
-  background-color: rgba(0, 0, 0, 0.5);
+  font-weight: 400;
   color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (max-width: 800px) {
@@ -86,9 +89,10 @@ body {
 .message-box {
   width: 97%;
   height: auto;
-  min-height: 20px;
   margin: 10px;
   padding: 10px;
+  min-height: 20px;
   border-radius: 10px;
+  overflow-wrap: break-word;
   background-color: rgba(0, 0, 0, 0.5);
 }
