@@ -95,4 +95,23 @@ body {
   border-radius: 10px;
   overflow-wrap: break-word;
   background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: slideOut 1s ease forwards 0.1s, fadeIn 1s ease forwards 0.1s;
+  --distance-factor: 0.1;
 }
+
+@keyframes slideOut {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+

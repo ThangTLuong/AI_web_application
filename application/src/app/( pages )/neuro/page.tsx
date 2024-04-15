@@ -5,6 +5,9 @@ import React, { useState } from "react";
 
 export default function Neuro() {
   const [chatHistory, setChatHistory] = useState<string[]>([]);
+  
+  const delay = (ms: number) =>
+    new Promise((resolve) => setTimeout(resolve, ms));
 
   async function onSubmit(event: React.MouseEvent<HTMLDivElement>) {
     event.preventDefault();
@@ -27,6 +30,19 @@ export default function Neuro() {
     let message: string = entry.trim();
     if (message !== "")
       setChatHistory((prevHistory) => [...prevHistory, message]);
+
+    const response = await getQuery();
+    const { hello } = response;
+    await delay(1000);
+    setChatHistory((prevHistory) => [...prevHistory, hello as string]);
+  }
+
+  async function getQuery() {
+    const response = await fetch("/api/query", {
+      method: "GET",
+    });
+
+    return response.json();
   }
 
   return (
